@@ -20,6 +20,22 @@
 
 	<dependencies>
 
+		<!-- shaclex library for rdf validation -->
+		<dependency>
+			<groupId>es.weso</groupId>
+			<artifactId>shaclex_2.12</artifactId>
+			<version>0.0.93</version>
+			<type>pom</type>
+		</dependency>
+
+		<!-- kafka clients for consumer configuration -->
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-clients</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+
+		<!-- java unit tests import -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -28,5 +44,37 @@
 		</dependency>
 
 	</dependencies>
+
+	<repositories>
+
+		<repository>
+			<id>BintrayJCenter</id>
+			<name>BintrayJCenter</name>
+			<url>https://jcenter.bintray.com/</url>
+			<layout>default</layout>
+		</repository>
+
+		<repository>
+			<id>sonatypesnapshots</id>
+			<name>sonatype-snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+			<layout>default</layout>
+		</repository>
+
+		<repository>
+			<id>sonatypereleases</id>
+			<name>sonatype-releases</name>
+			<url>https://oss.sonatype.org/content/repositories/releases/</url>
+			<layout>default</layout>
+		</repository>
+
+		<repository>
+			<id>Bintray</id>
+			<name>Bintray</name>
+			<url>http://dl.bintray.com/labra/maven/</url>
+			<layout>default</layout>
+		</repository>
+
+	</repositories>
 
 </project>
