@@ -1,4 +1,4 @@
-package org.weso.turbine.validatiors;
+package org.weso.turbine.validators;
 
 
 import es.weso.rdf.RDFReader;

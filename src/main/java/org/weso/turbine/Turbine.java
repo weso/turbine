@@ -3,13 +3,13 @@ package org.weso.turbine;
 import org.weso.turbine.stats.ResultsPublisher;
 import org.weso.turbine.streams.RDFStream;
 import org.weso.turbine.streams.StreamConsumer;
-import org.weso.turbine.validatiors.RDFValidator;
-import org.weso.turbine.validatiors.RDFValidatorResult;
+import org.weso.turbine.validators.RDFValidator;
+import org.weso.turbine.validators.RDFValidatorResult;
 
 import java.util.Collection;
 
 /**
- * The Turbine is the class used by the user to initialize the rdf stream validatiors process.
+ * The Turbine is the class used by the user to initialize the rdf stream validators process.
  *
  *
  * @author Guillermo Facundo Colunga
