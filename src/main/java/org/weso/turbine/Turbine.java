@@ -1,9 +1,15 @@
 package org.weso.turbine;
 
+import org.weso.turbine.stats.ResultsPublisher;
+import org.weso.turbine.streams.RDFStream;
+import org.weso.turbine.streams.StreamConsumer;
+import org.weso.turbine.validatiors.RDFValidator;
+import org.weso.turbine.validatiors.RDFValidatorResult;
+
 import java.util.Collection;
 
 /**
- * The Turbine is the class used by the user to initialize the rdf stream validation process.
+ * The Turbine is the class used by the user to initialize the rdf stream validatiors process.
  *
  *
  * @author Guillermo Facundo Colunga
@@ -13,6 +19,8 @@ public class Turbine implements Runnable {
     
     private StreamConsumer streamConsumer;
     private RDFValidator rdfValidator;
+    private ResultsPublisher resultsPublisher;
+
     private boolean continueExecuting;
 
     /**
@@ -24,6 +32,12 @@ public class Turbine implements Runnable {
     public Turbine(StreamConsumer streamConsumer, RDFValidator rdfValidator) {
         setStreamConsumer(streamConsumer);
         setRDFValidator(rdfValidator);
+    }
+
+    public Turbine(StreamConsumer streamConsumer, RDFValidator rdfValidator, ResultsPublisher resultsPublisher) {
+        setStreamConsumer(streamConsumer);
+        setRDFValidator(rdfValidator);
+        setResultsPublisher(resultsPublisher);
     }
 
     /**
@@ -53,6 +67,19 @@ public class Turbine implements Runnable {
     }
 
     /**
+     * Checks and sets the results publisher.
+     *
+     * @param resultsPublisher to be set.
+     */
+    private void setResultsPublisher(ResultsPublisher resultsPublisher) {
+        if(resultsPublisher == null) {
+            throw new IllegalArgumentException("The results publisher cannot be null.");
+        }
+
+        this.resultsPublisher = resultsPublisher;
+    }
+
+    /**
      * Stops the execution of the turbine consumer. If needed to run again just execute run again.
      */
     public void stop() {
@@ -62,11 +89,17 @@ public class Turbine implements Runnable {
     @Override
     public void run() {
         this.continueExecuting = true;
-        while(this.continueExecuting) {
-            Collection<RDFStream> stream = this.streamConsumer.consume();
 
-            // Inside of this foreach must be implemented all necesary operations to send the result somewhere.
-            stream.forEach((rdfStream) -> this.rdfValidator.validate(rdfStream));
+        while(this.continueExecuting) {
+            Collection<RDFStream> streams = this.streamConsumer.consume();
+            RDFValidatorResult result;
+
+            for(RDFStream stream : streams) {
+                result = this.rdfValidator.validate(stream);
+
+                if(this.resultsPublisher!=null)
+                    this.resultsPublisher.publish(result);
+            }
         }
     }
 }
