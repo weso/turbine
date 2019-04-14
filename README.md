@@ -8,8 +8,8 @@ Turbine is a library that allows to validate RDF streams against a given schema.
 ```java
 
 // Turbine will connect to kafka at the given ip address and to the given topic.
-Turbine turbine = new Turbine( new KafkaConsumer("127.0.0.1", "rdf-streams-topic"),
-                               Validator.DEFAULT_SHACLEX_VALIDATOR);
+Turbine turbine = new Turbine(new KafkaConsumer("127.0.0.1", "rdf-streams-topic"),
+                                Validator.DEFAULT_SHACLEX_VALIDATOR);
 
 // Start turbine
 turbine.run();
