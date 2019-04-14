@@ -17,5 +17,5 @@ public interface RDFValidator {
      * @return the result of the validation for the rdf stream. The result can be
      * correct or incorrect, in the last case will contain the description of the error.
      */
-    RDFValidatorResult validate();
+    RDFValidatorResult validate(RDFStream rdfStream);
 }

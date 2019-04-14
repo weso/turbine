@@ -1,5 +1,7 @@
 package org.weso.turbine;
 
+import java.util.Collection;
+
 /**
  * Defines a common interface for any implementation of different streaming systems.
  *
@@ -13,5 +15,5 @@ public interface StreamConsumer {
      *
      * @return the rdf stream object contained in the stream event.
      */
-    RDFStream consume();
+    Collection<RDFStream> consume();
 }
