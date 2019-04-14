@@ -1,4 +1,4 @@
-package org.weso.turbine.validation;
+package org.weso.turbine.validatiors;
 
 import es.weso.rdf.jena.RDFAsJenaModel;
 import es.weso.shapeMaps.ShapeMap;
