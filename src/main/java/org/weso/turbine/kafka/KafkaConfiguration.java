@@ -1,4 +1,4 @@
-package org.weso.rdfsv.kafka;
+package org.weso.turbine.kafka;
 
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 

@@ -1,12 +1,10 @@
-package org.weso.rdfsv.validation;
+package org.weso.turbine.validation;
 
 import es.weso.rdf.jena.RDFAsJenaModel;
-import es.weso.schema.Result$;
 import es.weso.shapeMaps.ShapeMap;
 import es.weso.shex.Schema;
 import es.weso.shex.validator.Validator;
 import es.weso.utils.FileUtils;
-import org.apache.jena.sparql.function.library.leviathan.log;
 import scala.Option;
 import scala.util.Either;
 import scala.util.Left;

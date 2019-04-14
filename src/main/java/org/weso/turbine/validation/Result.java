@@ -1,4 +1,4 @@
-package org.weso.rdfsv.validation;
+package org.weso.turbine.validation;
 
 
 import es.weso.rdf.RDFReader;
