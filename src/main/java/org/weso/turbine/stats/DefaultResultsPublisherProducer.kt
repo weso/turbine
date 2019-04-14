@@ -1,9 +1,10 @@
 package org.weso.turbine.stats
 
-import org.weso.turbine.validatiors.RDFValidatorResult
+import org.weso.turbine.validators.RDFValidatorResult
+import java.lang.IllegalArgumentException
 
 import java.math.BigInteger
-import java.util.LinkedList
+import java.util.*
 
 /**
  * Default implementation of a results publisher. It stores the results of the results received.
@@ -11,7 +12,7 @@ import java.util.LinkedList
  * @author Guillermo Facundo Colunga.
  * @version 20180414
  */
-class DefaultResultsPublisher : ResultsPublisher {
+class DefaultResultsPublisherProducer : ResultsPublisher, ResultsProducer {
 
     private val correctValidations: BigInteger = BigInteger.ZERO
     private val incorrectValidations: BigInteger = BigInteger.ZERO
@@ -34,4 +35,21 @@ class DefaultResultsPublisher : ResultsPublisher {
 
         this.percentageOfCorrectValidations = this.correctValidations.divide(this.correctValidations.add(this.incorrectValidations)).toFloat().toDouble()
     }
+
+    override fun getNumberOfCorrectValidations(): String {
+        return this.correctValidations.toString()
+    }
+
+    override fun getNumberOfIncorrectValidations(): String {
+        return this.incorrectValidations.toString()
+    }
+
+    override fun getPercentageOfCorrectValidations(): String {
+        return this.percentageOfCorrectValidations.toString()
+    }
+
+    override fun getIncorrectValidationResults(): MutableCollection<RDFValidatorResult> {
+        return this.incorrectValidationResults
+    }
+
 }
