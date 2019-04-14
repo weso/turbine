@@ -1,2 +1,2 @@
-# rdfsv
-RDF Stream Validation
+# turbine
+RDF Stream Validation Service
