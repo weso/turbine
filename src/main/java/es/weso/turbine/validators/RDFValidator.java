@@ -1,6 +1,6 @@
-package org.weso.turbine.validators;
+package es.weso.turbine.validators;
 
-import org.weso.turbine.streams.RDFStream;
+import es.weso.turbine.streams.RDFStream;
 
 /**
  * For every possible implementation of an RDF validator we will have a validate method
@@ -12,6 +12,8 @@ import org.weso.turbine.streams.RDFStream;
  */
 @FunctionalInterface
 public interface RDFValidator {
+
+    RDFValidator SHACLEX_VALIDATOR = new ShaclexValidatorAdapter();
 
     /**
      * Performs the validators algorithm over an RDF Stream and returns the result.

@@ -1,7 +1,6 @@
-package org.weso.turbine.stats
+package es.weso.turbine.stats
 
-import org.weso.turbine.validators.RDFValidatorResult
-import java.lang.IllegalArgumentException
+import es.weso.turbine.validators.RDFValidatorResult
 
 import java.math.BigInteger
 import java.util.*

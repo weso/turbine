@@ -1,6 +1,6 @@
-package org.weso.turbine.validators;
+package es.weso.turbine.validators;
 
-import org.weso.turbine.streams.RDFStream;
+import es.weso.turbine.streams.RDFStream;
 
 /**
  * After a validators a result is generated. The result contains the validated

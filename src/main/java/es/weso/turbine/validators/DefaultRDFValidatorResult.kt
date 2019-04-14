@@ -1,6 +1,6 @@
-package org.weso.turbine.validators
+package es.weso.turbine.validators
 
-import org.weso.turbine.streams.RDFStream
+import es.weso.turbine.streams.RDFStream
 
 /**
  * Default implementation of an rdf validated stream.

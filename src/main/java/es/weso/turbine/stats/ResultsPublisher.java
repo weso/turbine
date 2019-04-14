@@ -1,6 +1,6 @@
-package org.weso.turbine.stats;
+package es.weso.turbine.stats;
 
-import org.weso.turbine.validators.RDFValidatorResult;
+import es.weso.turbine.validators.RDFValidatorResult;
 
 /**
  * Interface to all posible implementations of aany results publishers.

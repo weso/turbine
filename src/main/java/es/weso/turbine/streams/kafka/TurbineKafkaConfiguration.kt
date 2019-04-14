@@ -1,4 +1,4 @@
-package org.weso.turbine.streams.kafka
+package es.weso.turbine.streams.kafka
 
 import java.util.Properties
 
@@ -6,9 +6,9 @@ import java.util.Properties
  * Interface for connection over kafka. Represents the basic configuration for kafka.
  *
  * @author Guillermo Facundo Colunga
- * @version 20180414
+ * @version 20190414
  */
-interface KafkaConfiguration {
+interface TurbineKafkaConfiguration {
 
     /**
      * For kafka to be configured it is needed to provide a set of properties,
@@ -17,6 +17,6 @@ interface KafkaConfiguration {
      * @return the properties object containing all needed properties to connect
      * to kafka.
      */
-    val consumer: Properties
+    val configuration: Properties
 
 }

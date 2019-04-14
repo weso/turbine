@@ -1,4 +1,4 @@
-package org.weso.turbine.streams;
+package es.weso.turbine.streams;
 
 import java.util.Collection;
 

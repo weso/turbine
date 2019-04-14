@@ -1,7 +1,7 @@
-package org.weso.turbine.validators;
+package es.weso.turbine.validators;
 
 
-import org.weso.turbine.streams.RDFStream;
+import es.weso.turbine.streams.RDFStream;
 
 public class ShaclexValidatorAdapter implements RDFValidator {
 
