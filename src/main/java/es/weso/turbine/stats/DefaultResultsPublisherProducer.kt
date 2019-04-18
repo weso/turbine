@@ -20,7 +20,7 @@ class DefaultResultsPublisherProducer : ResultsPublisher, ResultsProducer {
 
     init {
         this.percentageOfCorrectValidations = 0.0
-        this.incorrectValidationResults = LinkedList()
+        this.incorrectValidationResults = mutableListOf()
     }
 
     override fun publish(result: RDFValidatorResult) {

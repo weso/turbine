@@ -6,6 +6,7 @@ import org.apache.kafka.clients.consumer.KafkaConsumer
 import es.weso.turbine.streams.RDFStream
 
 import java.time.Duration
+import java.util.*
 
 /**
  * Defeault implementation for a kafka consumer.
@@ -22,6 +23,9 @@ class DefaultTurbineKafkaConsumer(private val kafkaConfiguration: TurbineKafkaCo
             throw IllegalStateException("Consumer already exists, cannot be created again.")
         }
         this.consumer = KafkaConsumer(this.kafkaConfiguration.configuration)
+
+        //this.consumer.subscribe(topicName)
+
         return this.consumer!!
     }
 
