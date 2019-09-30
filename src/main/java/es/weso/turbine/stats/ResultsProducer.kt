@@ -1,8 +1,6 @@
-package es.weso.turbine.stats;
+package es.weso.turbine.stats
 
-import es.weso.turbine.validators.RDFValidatorResult;
-
-import java.util.Collection;
+import es.weso.turbine.validators.RDFValidatorResult
 
 /**
  * A results producer is the object that will be published as a JSON or as whatever the user wants to.
@@ -10,33 +8,33 @@ import java.util.Collection;
  * @author Guillermo Facundo Colunga
  * @version 20180414
  */
-public interface ResultsProducer {
+interface ResultsProducer {
 
     /**
      * Gets the number of correct validations that had occur until this method is called.
      *
      * @return the number of correct validations.
      */
-    String getNumberOfCorrectValidations();
+    val numberOfCorrectValidations: String
 
     /**
      * Gets the number of incorrect validations that had occur until this method is called.
      *
      * @return the number of incorrect validations.
      */
-    String getNumberOfIncorrectValidations();
+    val numberOfIncorrectValidations: String
 
     /**
      * Gets the percentage of correct validations that had occur until this method is called.
      *
      * @return the percentage of correct validations.
      */
-    String getPercentageOfCorrectValidations();
+    val percentageOfCorrectValidations: String
 
     /**
      * Gets the incorrect validations objects that had occur until this method is called.
      *
      * @return the incorrect validations objects.
      */
-    Collection<RDFValidatorResult> getIncorrectValidationResults();
+    val incorrectValidationResults: Collection<RDFValidatorResult>
 }

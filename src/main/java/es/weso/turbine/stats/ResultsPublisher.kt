@@ -1,6 +1,6 @@
-package es.weso.turbine.stats;
+package es.weso.turbine.stats
 
-import es.weso.turbine.validators.RDFValidatorResult;
+import es.weso.turbine.validators.RDFValidatorResult
 
 /**
  * Interface to all posible implementations of aany results publishers.
@@ -9,12 +9,12 @@ import es.weso.turbine.validators.RDFValidatorResult;
  * @version 20190414
  */
 @FunctionalInterface
-public interface ResultsPublisher {
+interface ResultsPublisher {
 
     /**
      * Publishes a given result.
      *
      * @param result to publish.
      */
-    void publish(RDFValidatorResult result);
+    fun publish(result: RDFValidatorResult)
 }
