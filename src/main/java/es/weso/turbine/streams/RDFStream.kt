@@ -1,6 +1,6 @@
-package es.weso.turbine.streams;
+package es.weso.turbine.streams
 
-import es.weso.rdf.jena.RDFAsJenaModel;
+import es.weso.rdf.jena.RDFAsJenaModel
 
 /**
  * Represents an rdf stream that can be validated.
@@ -8,30 +8,31 @@ import es.weso.rdf.jena.RDFAsJenaModel;
  * @author Guillermo Facundo Colunga
  * @version 20190419
  */
-public interface RDFStream {
+interface RDFStream {
 
     /**
      * Gets the graph to validate against the schema in turtle syntax.
      *
      * @return an string in ttl syntax containing the graph to validate.
      */
-    String getGraph();
+    val graph: String
 
     /**
      * Gets the shape expresion shape map associated with the graph.
-     * <p>
+     *
+     *
      * set of properties for associating nodes with shapes. These are defined as RDF properties,
      * implying an execution model where the node/shape associations are supplied in RDF.
-     * </p>
+     *
      *
      * @return the shape expresion shape map associated with the graph.
      */
-    String getShapeMap();
+    val shapeMap: String
 
     /**
      * Gets the schema against the graph will be validated.
      *
      * @return the schema against the graph will be validated.
      */
-    String getSchema();
+    val schema: String
 }
